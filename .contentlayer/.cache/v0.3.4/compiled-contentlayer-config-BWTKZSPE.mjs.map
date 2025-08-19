@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../contentlayer.config.ts"],
+  "sourcesContent": ["export default {\r\n  \"dev\": \"contentlayer dev\",\r\n  \"build\": \"contentlayer build && next build\"\r\n};"],
+  "mappings": ";AAAA,IAAO,8BAAQ;AAAA,EACb,OAAO;AAAA,EACP,SAAS;AACX;",
+  "names": []
+}
