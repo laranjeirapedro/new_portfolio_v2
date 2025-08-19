@@ -1,8 +1,5 @@
-// components/home/project-highlight.tsx
-
 import ProjectCard from "@/components/projects/project-card";
 
-// Exemplo de projetos destacados
 const projects = [
   {
     title: "Weather App",
@@ -22,8 +19,10 @@ const projects = [
 
 export default function ProjectHighlight() {
   return (
-    <section className="w-full py-8">
-      <h2 className="text-2xl font-bold mb-4">Highlighted Projects</h2>
+    <section className="w-full max-w-7xl mx-auto py-8 px-4">
+      <h2 className="text-2xl text-white font-bold mb-4">
+        Highlighted Projects
+      </h2>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
         {projects.map((p) => (
           <ProjectCard key={p.title} {...p} />
