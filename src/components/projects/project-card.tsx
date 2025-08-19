@@ -1,4 +1,3 @@
-// components/projects/project-card.tsx
 import React from "react";
 
 type ProjectCardProps = {
