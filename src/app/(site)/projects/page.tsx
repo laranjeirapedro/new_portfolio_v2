@@ -1,28 +1,5 @@
 import ProjectCard from "@/components/projects/project-card";
-
-const projects = [
-  {
-    title: "Weather App",
-    description: "Weather forecast using React + Tailwind, API Integration.",
-    tags: ["React", "Tailwind", "API"],
-    image: "/images/weather-app.webp",
-    repo: "https://github.com/laranjeirapedro/weather-app",
-  },
-    {
-    title: "Old Portfolio",
-    description: "Personal portfolio built with Next.js (App Router), React, TypeScript, and Tailwind CSS.",
-    tags: ["React", "Tailwind", "TypeScript"],
-    image: "/images/old-portfolio.webp",
-    repo: "https://github.com/laranjeirapedro/new_portfolio",
-  },
-  {
-    title: "To-Do List",
-    description: "Full-stack to-do list, Next.js + MongoDB CRUD.",
-    tags: ["Next.js", "MongoDB", "Tailwind"],
-    image: "/images/todo-app.webp",
-    repo: "https://github.com/laranjeirapedro/todo-list",
-  },
-];
+import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
   return (
