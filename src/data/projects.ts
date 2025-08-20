@@ -9,6 +9,15 @@ export const projects = [
     liveUrl: "",
   },
   {
+    title: "My Better Self Blog",
+    description:
+      "A modern blog application built with Next.js, React 18, and TypeScript, structured as a Turborepo monorepo, and powered by Sanity CMS for content management. It provides a platform for publishing and managing articles efficiently, combining a performant frontend with a flexible headless CMS backend.",
+    tags: ["Next.js", "TypeScript", "Turborepo", "Sanity CMS"],
+    image: "/images/my-better-self.webp",
+    repo: "https://github.com/laranjeirapedro/portfolio_project_my_better_self",
+    liveUrl: "https://mybetterself.blog/",
+  },
+  {
     title: "Weather App",
     description: "SkyWatch is a weather forecast app built with Next.js and Tailwind CSS, utilizing the WeatherAPI.com to provide real-time weather data. It allows users to search for weather conditions by city, address, or postal code, displaying current temperature, wind speed, humidity, sunrise and sunset times. With a clean and responsive interface.",
     tags: ["React", "Tailwind", "API"],
