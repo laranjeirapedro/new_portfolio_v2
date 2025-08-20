@@ -3,7 +3,7 @@ import { projects } from "@/data/projects";
 
 export default function ProjectHighlight() {
   return (
-    <section className="w-full max-w-7xl mx-auto py-8 px-4">
+    <section className="w-full max-w-7xl mx-auto px-4">
       <h2 className="text-4xl bg-gradient-to-r from-sky-500 via-indigo-500 to-blue-700 text-white text-center font-bold mb-4 border-blue rounded-full py-2">Highlighted Projects</h2>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
         {projects.slice(0, 4).map((p) => (
