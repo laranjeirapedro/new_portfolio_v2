@@ -3,7 +3,7 @@ export const projects = [
     title: "New Portfolio",
     description:
       "A clean and responsive personal portfolio built with Next.js, React, and Tailwind CSS, showcasing projects, skills, and experience. Utilizes Contentlayer for content management, react-hook-form and Zod for form handling and validation, Framer Motion for animations, Lucide React for icons, Shadcn/ui for UI components, and Resend for email functionality. Features dark mode and optimized performance.",
-    tags: ["React", "Tailwind", "API"],
+    tags: ["Next.js", "TypeScript", "Tailwind", "API", "Zod", "Framer Motion", "Shadcn/ui", "Resend"],
     image: "/images/new-portfolio.webp",
     repo: "https://github.com/laranjeirapedro/new_portfolio_v2",
     liveUrl: "",
@@ -29,7 +29,7 @@ export const projects = [
     title: "Old Portfolio",
     description:
       "Personal portfolio built with Next.js (App Router), React, TypeScript, and Tailwind CSS. Features dynamic GitHub API integration to display repositories by topic, reusable components, and responsive UI. Demonstrates skills in SSR, API consumption, data filtering, TypeScript typing, and accessibility in a modern front-end stack. Deployed on Vercel.",
-    tags: ["React", "Tailwind", "TypeScript"],
+    tags: ["React", "Tailwind", "TypeScript", "Resend", "GitHub API"],
     image: "/images/old-portfolio.webp",
     repo: "https://github.com/laranjeirapedro/new_portfolio",
     liveUrl: "https://pedro-laranjeira-portfolio.vercel.app/",
