@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur shadow-lg border-b border-neutral-200 dark:border-neutral-800">
       <nav className="max-w-7xl mx-auto flex justify-between items-center py-2 px-4">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl text-sky-600 dark:text-sky-400 tracking-tight">
+        <Link href="/" className="flex items-center gap-2 font-bold text-3xl text-sky-600 dark:text-sky-400 tracking-tight">
           Pedro Magalhaes
         </Link>
         <ul className="flex gap-2 md:gap-5 items-center">
