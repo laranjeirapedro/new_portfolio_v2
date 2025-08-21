@@ -1,6 +1,6 @@
 import React from "react";
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
   title: string;
   description: string;
   tags: string[];
