@@ -2,18 +2,18 @@ import { render, screen } from "@testing-library/react";
 import ProjectCard from "@/components/projects/project-card";
 import type { ProjectCardProps } from "@/components/projects/project-card";
 
+const baseProps: ProjectCardProps = {
+  title: "Example Project",
+  description: "This is a test project.",
+  tags: ["React", "Next.js"],
+  image: "example.jpg",
+  repo: "https://github.com/example/project",
+  liveUrl: "https://example.com",
+};
+
 describe("ProjectCard component", () => {
   test("renders project title", () => {
-    const props: ProjectCardProps = {
-      title: "Test Project",
-      description: "Test description",
-      tags: ["React", "TypeScript"],
-      image: "test-image.jpg",
-      repo: "https://github.com/example/repo",
-      liveUrl: "https://example.com",
-    };
-
-    render(<ProjectCard {...props} />);
-    expect(screen.getByText("Test Project")).toBeInTheDocument();
+    render(<ProjectCard {...baseProps} />);
+    expect(screen.getByText("Example Project")).toBeInTheDocument();
   });
 });
