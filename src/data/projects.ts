@@ -6,7 +6,7 @@ export const projects = [
     tags: ["Next.js", "TypeScript", "Tailwind", "Zod", "Framer Motion", "Shadcn/ui", "Resend", "Jest", "Cypress"],
     image: "/images/new-portfolio.webp",
     repo: "https://github.com/laranjeirapedro/new_portfolio_v2",
-    liveUrl: "",
+    liveUrl: "https://pedro-magalhaes-portfolio.vercel.app/",
   },
   {
     title: "My Better Self Blog",
@@ -22,7 +22,7 @@ export const projects = [
     description: "SkyWatch is a weather forecast app built with Next.js and Tailwind CSS, utilizing the WeatherAPI.com to provide real-time weather data. It allows users to search for weather conditions by city, address, or postal code, displaying current temperature, wind speed, humidity, sunrise and sunset times. With a clean and responsive interface.",
     tags: ["React", "Tailwind", "API"],
     image: "/images/weather-app.webp",
-    repo: "https://github.com/laranjeirapedro/weather-app",
+    repo: "https://github.com/laranjeirapedro/portfolio_project--weather-app",
     liveUrl: "https://portfolio-project-weather-app.vercel.app/",
   },
   {
@@ -39,7 +39,7 @@ export const projects = [
     description: "A full-stack To-Do App using React/Next.js (frontend) and .NET 8 + MongoDB (backend) hosted at Render(Dockerfile). Showcases modern web development, state management, and API integration with a clean and responsive UI.",
     tags: ["Next.js", "MongoDB", "Tailwind"],
     image: "/images/todo-app.webp",
-    repo: "https://github.com/laranjeirapedro/todo-list",
+    repo: "https://github.com/laranjeirapedro/portfolio_project--to-do-list",
     liveUrl: "https://portfolio-project-to-do-list.vercel.app/",
   },
 ];
