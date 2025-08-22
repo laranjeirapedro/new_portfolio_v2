@@ -13,7 +13,6 @@ const schema = z.object({
   message: z.string().min(5, "Message must be at least 5 characters"),
 });
 
-
 type FormData = z.infer<typeof schema>;
 
 export default function ContactForm() {
@@ -44,35 +43,42 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md space-y-4">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl space-y-4"
+    >
       <input
         {...register("name")}
         placeholder="Your Name"
-        className="w-full px-4 py-3 rounded border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
       />
       {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+
       <input
         {...register("email")}
         placeholder="Your Email"
-        className="w-full px-4 py-3 rounded border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
       />
       {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+
       <textarea
         {...register("message")}
         placeholder="Your Message"
-        className="w-full px-4 py-4 rounded border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-y"
+        className="w-full px-4 py-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-y"
         rows={6}
       />
       {errors.message && (
         <p className="text-red-500">{errors.message.message}</p>
       )}
+
       <button
         type="submit"
         disabled={isSubmitting}
-        className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+        className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition"
       >
         {isSubmitting ? "Sending..." : "Send"}
       </button>
+
       {isSubmitSuccessful && (
         <p className="text-green-600 mt-2">Message sent successfully!</p>
       )}

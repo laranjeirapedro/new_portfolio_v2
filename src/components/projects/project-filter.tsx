@@ -1,6 +1,8 @@
-import { useState } from "react";
+"use client";
 
-type Project = {
+import { useState, useEffect } from "react";
+
+export type Project = {
   title: string;
   description: string;
   tags: string[];
@@ -9,54 +11,80 @@ type Project = {
   liveUrl: string;
 };
 
+
 type ProjectFilterProps = {
   projects: Project[];
-  onFilter: (filtered: Project[]) => void;
+  onFilter: (projects: Project[]) => void;
 };
 
-const getAllTags = (projects: Project[]) => {
-  const tags = new Set<string>();
-  projects.forEach((proj) => proj.tags.forEach((t) => tags.add(t)));
-  return Array.from(tags);
-};
+export default function ProjectFilter({ projects, onFilter }: ProjectFilterProps) {
+  const allTags = Array.from(
+    new Set(projects.flatMap((project) => project.tags))
+  );
 
-export default function ProjectFilter({
-  projects,
-  onFilter,
-}: ProjectFilterProps) {
-  const tags = getAllTags(projects);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [activeTag, setActiveTag] = useState<string>("All");
 
-  function handleSelect(tag: string | null) {
-    setSelected(tag);
-    if (!tag) {
-      onFilter(projects); // Sem filtro: mostra todos
+  const filterProjects = (tag: string) => {
+    setActiveTag(tag);
+
+    if (tag === "All") {
+      onFilter(projects);
     } else {
       onFilter(projects.filter((p) => p.tags.includes(tag)));
     }
-  }
+  };
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div className="flex gap-3 flex-wrap mt-4 mb-6 justify-center">
-      <button
-        onClick={() => handleSelect(null)}
-        className={`px-3 py-1 rounded-full border font-semibold ${selected === null ? "bg-sky-600 text-white" : "bg-blue-200 text-sky-700"}`}
-      >
-        All
-      </button>
-      {tags.map((tag) => (
-        <button
-          key={tag}
-          onClick={() => handleSelect(tag)}
-          className={`px-3 py-1 rounded-full border font-semibold transition ${
-            selected === tag
-              ? "bg-sky-600 text-white"
-              : "bg-blue-200 text-sky-700"
-          }`}
+    <div className="mb-8 px-4 pt-4">
+      {isMobile ? (
+        <select
+          className="w-full border border-gray-300 rounded px-3 py-2"
+          value={activeTag}
+          onChange={(e) => filterProjects(e.target.value)}
         >
-          {tag}
-        </button>
-      ))}
+          <option value="All">All</option>
+          {allTags.map((tag) => (
+            <option key={tag} value={tag}>
+              {tag}
+            </option>
+          ))}
+        </select>
+      ) : (
+        <div className="flex flex-wrap gap-4">
+          <button
+            className={`px-4 py-2 rounded ${
+              activeTag === "All"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-blue-400 hover:text-white"
+            }`}
+            onClick={() => filterProjects("All")}
+          >
+            All
+          </button>
+          {allTags.map((tag) => (
+            <button
+              key={tag}
+              className={`px-4 py-2 rounded ${
+                activeTag === tag
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-blue-400 hover:text-white"
+              }`}
+              onClick={() => filterProjects(tag)}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
