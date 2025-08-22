@@ -3,7 +3,7 @@ export const projects = [
     title: "New Portfolio",
     description:
       "A clean and responsive personal portfolio built with Next.js, React, and Tailwind CSS, showcasing projects, skills, and experience. Utilizes Contentlayer for content management, react-hook-form and Zod for form handling and validation, Framer Motion for animations, Lucide React for icons, Shadcn/ui for UI components, and Resend for email functionality. Features dark mode and optimized performance.",
-    tags: ["Next.js", "TypeScript", "Tailwind", "API", "Zod", "Framer Motion", "Shadcn/ui", "Resend"],
+    tags: ["Next.js", "TypeScript", "Tailwind", "Zod", "Framer Motion", "Shadcn/ui", "Resend", "Jest", "Cypress"],
     image: "/images/new-portfolio.webp",
     repo: "https://github.com/laranjeirapedro/new_portfolio_v2",
     liveUrl: "",
