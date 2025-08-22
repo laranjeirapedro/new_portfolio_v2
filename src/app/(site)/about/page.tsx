@@ -1,4 +1,4 @@
-import { Briefcase, Code, Database, GraduationCap } from "lucide-react";
+import { Briefcase, Code, GraduationCap } from "lucide-react";
 
 const timeline = [
   {
@@ -39,7 +39,7 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16">
+    <main className="max-w-4xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-extrabold mb-6 text-sky-800 dark:text-sky-300">
         About Me
       </h1>

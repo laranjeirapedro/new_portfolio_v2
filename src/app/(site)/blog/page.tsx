@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { PencilLine } from "lucide-react";
 
 export default function BlogPage() {
