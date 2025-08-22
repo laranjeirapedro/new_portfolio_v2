@@ -6,7 +6,7 @@ const baseProps: ProjectCardProps = {
   title: "Example Project",
   description: "This is a test project.",
   tags: ["React", "Next.js"],
-  image: "example.jpg",
+  image: "/example.jpg",
   repo: "https://github.com/example/project",
   liveUrl: "https://example.com",
 };
