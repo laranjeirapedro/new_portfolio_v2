@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export type ProjectCardProps = {
   title: string;
@@ -19,7 +20,13 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-      <img src={image} alt={title} className="w-full h-80 p-2 object-fill" />
+      <Image
+        src={image}
+        alt={title}
+        className="w-full h-80 p-2 object-fill"
+        width={100}
+        height={100}
+      />
       <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
         <p className="text-gray-300 mb-4 flex-grow">{description}</p>
