@@ -1,4 +1,4 @@
-import { Briefcase, Code, Database, GraduationCap } from "lucide-react";
+import { Briefcase, Code, GraduationCap } from "lucide-react";
 
 const timeline = [
   {
