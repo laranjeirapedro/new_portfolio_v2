@@ -1,4 +1,3 @@
-// app/layout.tsx
 import "@/app/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
@@ -9,8 +8,8 @@ import Footer from "../../components/layout/footer";
 
 
 export const metadata: Metadata = {
-  title: "Pedro's Portfolio",
-  description: "Pedro Laranjeira's Portfolio",
+  title: "Pedro Magalhaes Portfolio",
+  description: "Pedro Magalhaes Portfolio",
 };
 
 export default function RootLayout({
