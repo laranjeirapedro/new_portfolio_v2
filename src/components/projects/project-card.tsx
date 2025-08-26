@@ -1,12 +1,13 @@
-// components/projects/project-card.tsx
 import React from "react";
+import Image from "next/image";
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
   title: string;
   description: string;
   tags: string[];
   image: string;
   repo: string;
+  liveUrl: string;
 };
 
 export default function ProjectCard({
@@ -15,34 +16,53 @@ export default function ProjectCard({
   tags,
   image,
   repo,
+  liveUrl,
 }: ProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-4 flex flex-col">
-      <img
+    <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+      <Image
         src={image}
         alt={title}
-        className="rounded-md aspect-[16/9] object-cover mb-4"
+        className="w-full p-2 object-contain"
+        width={800}
+        height={1000}
+        quality={100}
       />
-      <h2 className="text-xl font-semibold">{title}</h2>
-      <p className="mt-2 text-gray-600 dark:text-gray-400">{description}</p>
-      <div className="flex flex-wrap gap-2 my-2">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded"
+
+      <div className="p-4 flex flex-col flex-grow">
+        <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+        <p className="text-gray-300 mb-4 flex-grow">{description}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs bg-sky-600 text-white px-2 py-1 rounded"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="mt-auto flex gap-3">
+          <a
+            href={repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 text-center px-4 py-2 border border-sky-500 text-sky-500 rounded hover:bg-sky-600 hover:text-white transition"
           >
-            {tag}
-          </span>
-        ))}
+            View Repository
+          </a>
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center px-4 py-2 bg-sky-600 text-white rounded hover:bg-sky-700 transition"
+            >
+              View Live
+            </a>
+          )}
+        </div>
       </div>
-      <a
-        href={repo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="self-end text-blue-600 dark:text-blue-400 underline mt-auto"
-      >
-        View Repository
-      </a>
     </div>
   );
 }

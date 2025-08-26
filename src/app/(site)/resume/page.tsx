@@ -128,7 +128,7 @@ const skills = [
 
 export default function ResumePage() {
   return (
-    <main className="max-w-3xl mx-auto p-6 pb-16">
+    <main className="md:max-w-[80%] max-w-3xl mx-auto p-6 pb-16">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 mb-6">
         <div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-sky-800 dark:text-sky-300 mb-1">
